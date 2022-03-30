@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="col-sm-6">
+      <img src="images/workspace.png" alt="">
+    </div>
+    <div class="col-sm-6">
+      <h1 class="title">Find great workspace</h1>
+      <h1>Our Workplaces</h1>
+      <% workspacesList.forEach(workspace => { %>
+      <h5>
+        <%= workspace.title %>
+      </h5>
+      <span>@
+        <%= workspace.address %> </span>
+      <% }); %>
+    </div>
+  </div>

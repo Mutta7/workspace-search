@@ -1,0 +1,26 @@
+{
+  "name": "workspace-search",
+  "version": "1.0.0",
+  "description": "A site for searching workspaces in the are which you select.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nzm17/workspace-search.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nzm17/workspace-search/issues"
+  },
+  "homepage": "https://github.com/Nzm17/workspace-search#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "http-status-codes": "^2.2.0"
+  }
+}
