@@ -6,10 +6,14 @@
       <h1>Subscribe!</h1>
       <p>Enter your email if you want to register and share new workspace that you found:</p>
       <form class="subscription-form" action="/subscribe" method="post">
+        <label for="name">Name</label>
         <input type="text" name="name" placeholder="Name">
-        <input type="text" name="email" placeholder="Email">
-        <input type="text" name="zipCode" placeholder="Zip Code" pattern="[0-9]{5}">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Email">
+        <label for="zipCode">Zip Code</label>
+        <input type="text" pattern="[0-9]{5}" name="zipCode" placeholder="Zip Code">
         <input type="submit" name="submit">
       </form>
+      <p> We'll get back to you soon!</p>
     </div>
   </div>

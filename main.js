@@ -14,6 +14,7 @@ const db = mongoose.connection;
 db.once("open", ()=>{
     console.log("Successfully connected to MongoDB using Mongoose!");
 })
+mongoose.Promise = global.Promise
 
 app.set("port", process.env.PORT || 3000);
 
@@ -31,11 +32,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/workspaces", homeController.showWorkspaces);
-app.get("/contact", homeController.showSignUp);
-app.post("/contact", homeController.postedSignUpForm);
-app.get("/subscribers", subscribersController.getAllSubscribers, (req, res, next) => {
-    res.render("subscribers", {subscribers: req.data});
-});
+app.get("/contact", subscribersController.getSubscriptionPage);
+app.get("/subscribers", subscribersController.getAllSubscribers);
+app.post("/subscribe", subscribersController.saveSubscriber)
 
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);

@@ -19,6 +19,7 @@ exports.showWorkspaces = (req, res) => {
     });
 };
 
+/*
 exports.showSignUp = (req, res) => {
     res.render("contact");
 };
@@ -26,3 +27,4 @@ exports.showSignUp = (req, res) => {
 exports.postedSignUpForm = (req, res) => {
     res.render("thanks");
 };
+*/

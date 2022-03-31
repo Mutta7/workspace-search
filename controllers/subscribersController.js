@@ -33,6 +33,6 @@ exports.saveSubscriber = (req, res) => {
             res.render("thanks");
         })
         .catch(error => {
-            if(error) res.send(error);
+           res.send(error);
         });
 };
