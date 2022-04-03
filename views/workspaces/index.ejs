@@ -1,0 +1,21 @@
+<h2>Workspaces Table</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% workspaces.forEach(workspace => { %>
+    <tr>
+      <td>
+        <%= workspace.name %>
+      </td>
+      <td>
+        <%= workspace.address %>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

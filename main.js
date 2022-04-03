@@ -3,7 +3,10 @@ const express = require("express"),
     homeController = require("./controllers/homeController"),
     errorController = require("./controllers/errorController"),
     subscribersController = require("./controllers/subscribersController"),
-    layouts = require("express-ejs-layouts");
+    usersController = require("./controllers/usersController"),
+    workspacesController = require("./controllers/workspacesController"),
+    layouts = require("express-ejs-layouts"),
+    router = express.Router();
 
 const mongoose = require("mongoose");
 mongoose.connect(
@@ -26,14 +29,20 @@ app.use(
     express.urlencoded({extended: false})
 );
 app.use(express.json());
+app.use("/", router);
 
-app.get("/", (req, res) => {
-    res.render("index");
-});
+app.use(homeController.logRequestPaths);
 
-app.get("/workspaces", homeController.showWorkspaces);
-app.get("/contact", subscribersController.getSubscriptionPage);
-app.get("/subscribers", subscribersController.getAllSubscribers);
+router.get("/users/new", usersController.new);
+router.post("/users/create", usersController.create, usersController.redirectView);
+router.get("/users/:id", usersController.show, usersController.showView);
+
+app.get("/", homeController.index);
+app.get("/contact", homeController.getSubscriptionPage);
+
+app.get("/users", usersController.index, usersController.indexView);
+app.get("/workspaces", workspacesController.index, workspacesController.indexView);
+app.get("/subscribers", subscribersController.index,subscribersController.indexView);
 app.post("/subscribe", subscribersController.saveSubscriber)
 
 app.use(errorController.pageNotFoundError);
