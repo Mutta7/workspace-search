@@ -5,6 +5,7 @@ const express = require("express"),
     subscribersController = require("./controllers/subscribersController"),
     usersController = require("./controllers/usersController"),
     workspacesController = require("./controllers/workspacesController"),
+    methodOverride = require("method-override"),
     layouts = require("express-ejs-layouts"),
     router = express.Router();
 
@@ -30,12 +31,17 @@ app.use(
 );
 app.use(express.json());
 app.use("/", router);
+router.use(methodOverride("_method", {
+    methods: ["POST", "GET"]
+}))
 
 app.use(homeController.logRequestPaths);
 
 router.get("/users/new", usersController.new);
 router.post("/users/create", usersController.create, usersController.redirectView);
 router.get("/users/:id", usersController.show, usersController.showView);
+router.get("/users/:id/edit", usersController.edit);
+router.put("/users/:id/update",usersController.update, usersController.redirectView);
 
 app.get("/", homeController.index);
 app.get("/contact", homeController.getSubscriptionPage);
