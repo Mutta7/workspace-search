@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina");
 
 body {
   margin: 0;
@@ -53,6 +53,7 @@ a {
   cursor: pointer;
   display: inline-block;
   color: #fff;
+  margin-bottom: 2px;
 }
 
 .button:hover {
@@ -83,4 +84,17 @@ a {
 .subscription-form input {
   display: block;
   margin: 5px;
+}
+
+.data-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.data-form label {
+  margin: 5px 0 0 0;
+}
+
+.hidden-text {
+  -webkit-text-security: disc;
 }
