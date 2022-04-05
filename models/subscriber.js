@@ -1,22 +1,24 @@
 const mongoose = require("mongoose"),
-  subscriberSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        lowercase: true,
-        unique: true
-    },
-    zipCode: {
-        type: Number,
-        min: [1000000, "Zip code too short"],
-        max: 9999999
-    },
-    workspaces: [{type: mongoose.Schema.Types.ObjectId, ref: "Workspace"}]
-  });
+    subscriberSchema = mongoose.Schema({
+        name: {
+            type: String,
+            required: true
+        },
+        email: {
+            type: String,
+            required: true,
+            lowercase: true,
+            unique: true
+        },
+        zipCode: {
+            type: Number,
+            min: [1000000, "Zip code too short"],
+            max: 9999999
+        },
+        workspaces: [{type: mongoose.Schema.Types.ObjectId, ref: "Workspace"}]
+    },{
+        timestamps: true
+    });
 
 subscriberSchema.methods.getInfo = function() {
     return `Name: ${this.name} Email: ${this.email} Zip Code: ${this.zipCode}`;

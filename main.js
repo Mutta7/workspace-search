@@ -50,7 +50,6 @@ app.get("/contact", homeController.getSubscriptionPage);
 app.get("/users", usersController.index, usersController.indexView);
 app.get("/workspaces", workspacesController.index, workspacesController.indexView);
 app.get("/subscribers", subscribersController.index,subscribersController.indexView);
-app.post("/subscribe", subscribersController.saveSubscriber)
 
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);

@@ -15,7 +15,13 @@ const workspaceSchema = new mongoose.Schema({
         min: [1000000, "Zip code too short"],
         max: 9999999
     },
+    description: {
+        type: String,
+        required: true
+    },
     equipments: []
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model("Workspace", workspaceSchema)

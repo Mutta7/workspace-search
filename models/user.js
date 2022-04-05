@@ -5,7 +5,7 @@ const Subscriber = require("./subscriber");
 const mongoose = require("mongoose"),
     {Schema} = mongoose;
 
-var userSchema = new Schema({
+const userSchema = new Schema({
     name: {
         first: {
             type: String,
