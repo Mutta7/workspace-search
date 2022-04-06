@@ -1,0 +1,49 @@
+<h1 class="center">Workspace Data for
+    <%= workspace.name %>
+  </h1>
+  
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <td>
+        <%= workspace.name %>
+      </td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>
+        <%= workspace.description%>
+      </td>
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td>
+        <%= workspace.address%>
+      </td>
+    </tr>
+    <tr>
+      <th>Zip Code</th>
+      <td>
+        <%= workspace.zipCode%>
+      </td>
+    </tr>
+    <tr>
+        <th>Equipment</th>
+        <td>
+          <%= workspace.equipment%>
+        </td>
+      </tr>
+  </table>
+  
+  
+  <div>
+    <a class="button" href="<%=`/workspaces/${workspace._id}/edit`%>">
+      Edit Workspace Details
+    </a>
+  </div>
+  <div>
+    <a class="button" href="<%= `/workspaces/${workspace._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this record?')" a>Delete</a>
+  </div>
+  <div>
+    <a class="button" href="/workspaces">View all workspaces</a>
+  </div>

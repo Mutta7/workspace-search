@@ -4,13 +4,14 @@ const getWorkspaceParams = (body) => {
 		name: body.name,
 		address: body.address,
 		zipCode: body.zipCode,
-        description: body.description,  
+        description: body.description,
+        equipment: body.equipment  
 	};
 };
 
 module.exports = {
     index: (req, res, next) => {
-        Workspace.find({})
+        Workspace.find()
             .then(workspaces => {
                 res.locals.workspaces = workspaces;
                 next();
@@ -61,7 +62,7 @@ module.exports = {
   	},
     edit: (req, res, next) => {
     	let workspaceId = req.params.id;
-    	User.findById(workspaceId)
+    	Workspace.findById(workspaceId)
       		.then(workspace => {
         		res.render("workspaces/edit", {
           		workspace: workspace

@@ -9,11 +9,11 @@
     </tr>
   </thead>
   <tbody>
-    <% workspaces.forEach(course => { %>
+    <% workspaces.forEach(workspace=> { %>
     <tr>
       <td>
         <a href="<%= `/workspaces/${workspace._id}` %>">
-          <%= workspace.title %>
+          <%= workspace.name %>
         </a>
       </td>
       <td>

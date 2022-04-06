@@ -1,0 +1,16 @@
+<div class="data-form">
+    <form class="form-signin" action="<%=`/workspaces/${workspace._id}/update?_method=PUT`%>" method="POST">
+      <h2 class="form-signin-heading">Edit workspace:</h2>
+      <label for="inputName">Name</label>
+      <input type="text" name="name" id="inputName" class="form-control" value="<%= workspace.name %>" placeholder="Name" autofocus>
+      <label for="inputDescription">Description</label>
+      <input type="text" name="description" id="inputDescription" class="form-control" value="<%= workspace.description %>" placeholder="Description">
+      <label for="inputAddress">Address</label>
+      <input type="text" name="address" id="inputAddress" class="form-control" value="<%= workspace.address %>" placeholder="Address" required>
+      <label for="inputZipCode">Zip Code</label>
+      <input type="text" name="zipCode" id="inputZipCode" pattern="\d*" class="form-control" value="<%= workspace.zipCode %>" placeholder="Zip Code" required>
+      <label for="inputEquipment">Equipment</label>
+      <input type="text" name="equipment" id="inputEquipment" class="form-control" value="<%= workspace.equipment %>" placeholder="Equipment">
+      <br /><button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+    </form>
+  </div>
