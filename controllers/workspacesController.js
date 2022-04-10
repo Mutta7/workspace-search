@@ -1,3 +1,4 @@
+const workspace = require("../models/workspace");
 const Workspace = require("../models/workspace");
 const getWorkspaceParams = (body) => {
 	return {
@@ -5,7 +6,7 @@ const getWorkspaceParams = (body) => {
 		address: body.address,
 		zipCode: body.zipCode,
         description: body.description,
-        equipment: body.equipment  
+        equipments: body.equipments  
 	};
 };
 
@@ -76,6 +77,7 @@ module.exports = {
     update: (req, res, next) => {
         let workspaceId = req.params.id,
             workspaceParams = getWorkspaceParams(req.body);
+		console.log(req.body);
         Workspace.findByIdAndUpdate(workspaceId, {
             $set: workspaceParams
         })

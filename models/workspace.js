@@ -19,7 +19,7 @@ const workspaceSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    equipments: []
+    equipments: [{type: String}]
 }, {
     timestamps: true
 });
