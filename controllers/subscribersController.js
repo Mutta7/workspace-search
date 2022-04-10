@@ -23,7 +23,7 @@ module.exports = {
         res.render("subscribers/index");
     },
     new: (req, res) => {
-        res.render("subscriber/new");
+        res.render("subscribers/new");
     },
     create: (req, res, next) => {
         let subscriberParams = getSubscriberParams(req.body);
@@ -78,7 +78,7 @@ module.exports = {
             $set: subscriberParams
         })
             .then(subscriber => {
-                res.locals.subscriber = `/subscribers/${subscriberId}`;
+                res.locals.redirect = `/subscribers/${subscriberId}`;
                 res.locals.subscriber = subscriber;
                 next();
             })

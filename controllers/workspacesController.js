@@ -25,7 +25,7 @@ module.exports = {
 	    res.render("workspaces/index");
     },
     new: (req, res) => {
-	    res.render("workspaces/index");
+	    res.render("workspaces/new");
     },
     create: (req, res, next) => {
         let workspaceParams = getWorkspaceParams(req.body);
